@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles remain unchanged */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: url('fire.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 1;
+        }
+
+        .hovering:hover {
+            color: rgb(214, 69, 69);
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            opacity: 1;
+        }
+
+        header,
+        nav,
+        .width-100.banner-section,
+        .width-100.skill-section,
+        footer {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .footer-class {
+            color: yellow;
+        }
+
+        .banner-heading,
+        .banner-para,
+        .search-textbox,
+        .search-button,
+        .skill-list,
+        .view-button,
+        footer p {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .width-100.banner-section {
+            background-color: rgba(52, 152, 219, 0.8);
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .banner-para {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .search-sect input {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .search-button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(100px);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #34495e;
+        }
+
+        .search-button:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .search-button:active {
+            color: #000;
+        }
+
+        .search-button:active:before {
+            background: transparent;
+        }
+
+        .search-button:hover:before {
+            opacity: 1;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .width-100.skill-section {
+            background-color: rgba(236, 240, 241, 0.9);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .skill-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .skill-list-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .skill-list1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .skill-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .view-button {
+            background-color: #3498db;
+            height: 50px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.2em;
+            line-height: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .view-button:hover {
+            background-color: #2980b9;
+        }
+
+        .width-100.contact-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-submit {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-submit:hover {
+            background-color: #219d54;
+        }
+
+        .width-100.footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <title>Your Combined Website</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Explore my skills and projects</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="width-100 banner-section">
+        <div class="banner-heading">Welcome to My Portfolio</div>
+        <div class="banner-para">Explore my skills and projects</div>
+        <div class="search-sect">
+            <input type="text" class="search-textbox" placeholder="Search projects...">
+            <button class="search-button">Search</button>
+        </div>
+    </div>
+
+    <div class="width-100 skill-section">
+        <div class="skill-list">
+            <img src="html.png" alt="HTML Logo" class="skill-img">
+            <div>
+                <h2>HTML5</h2>
+                <p>Experience with structuring web content and presenting it on the web.</p>
+            </div>
+        </div>
+
+        <div class="skill-list-2">
+            <img src="css.png" alt="CSS Logo" class="skill-img">
+            <div>
+                <h2>CSS3</h2>
+                <p>Skilled in styling web pages to make them visually appealing and responsive.</p>
+            </div>
+        </div>
+
+        <div class="skill-list1">
+            <img src="js.png" alt="JavaScript Logo" class="skill-img">
+            <div>
+                <h2>JavaScript</h2>
+                <p>Proficient in creating dynamic and interactive user interfaces using JavaScript.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="width-100 contact-section">
+        <div class="contact-heading">Contact Me</div>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="width-100 footer">
+        <div class="footer-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <p class="footer-class">© 2023 Your Name. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
